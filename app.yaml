@@ -1,0 +1,16 @@
+runtime: php55
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /.*
+  script: index.php
+
+# [START env]
+env_variables:
+  # Replace project, instance, database, user and password with the values obtained
+  # when configuring your Cloud SQL instance.
+  MYSQL_DSN: mysql:unix_socket=/cloudsql/nioelsql;dbname=insight_database
+  MYSQL_USER: root
+  MYSQL_PASSWORD: 'satyaq89'
+# [END env]
